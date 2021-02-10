@@ -14,9 +14,9 @@ Uniswap V2
 
 Getting Started on a local chain
 --------------------------------
-run 'npm i' to install dependancies
-run 'truffle test' to run tests
-run 'truffle migrate' to migrate to local chain
+run `npm i` to install dependancies
+run `truffle test` to run tests
+run `truffle migrate` to migrate to local chain
 
 
 Constructor Parameters
