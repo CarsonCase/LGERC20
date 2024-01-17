@@ -1,38 +1,66 @@
-LGERC20
-=======
+## Foundry
 
-An ERC20 token with built in Liquidity Generation Event functionality
----------------------------------------------------------------------
+**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-**What is an LGE?**
+Foundry consists of:
 
-An LGE is a Liquidity Generation Event. It allows new ERC20 tokens to have liquidity on decentralized exchanges at launch so adopters can buy/ sell tokens before a substantial market forms naturally
+-   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
+-   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+-   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
+-   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-**What exchange does LGERC20 Work with?**
+## Documentation
 
-Uniswap V2
+https://book.getfoundry.sh/
 
-Getting Started on a local chain
---------------------------------
-run `npm i` to install dependancies  
-run `truffle test` to run tests  
-run `truffle migrate` to migrate to local chain  
+## Usage
 
+### Build
 
-Constructor Parameters
-----------------------
+```shell
+$ forge build
+```
 
-* uint256: The supply of ERC20 tokens to be minted in the LGE
-* uint256: The supply of ERC20 tokens to be minted to the devs at deployment
-* address: The address of the UniswapV2Router02
-* address: The receiver of the LGE's liquidity tokens. This can be the devs, or another contract
-* uint256: The time the LGE ends (seconds since unix epoch)
+### Test
 
-**NOTE:** Javascript's Date.now() function returns _miliseconds_ since the unix epoch
+```shell
+$ forge test
+```
 
-I've deployed. Now what?
-------------------------
+### Format
 
-Up until the end of the LGE that you specified in the constructor users can send ETH to the contract. It will take note of the users address and the ammount contributed.  
+```shell
+$ forge fmt
+```
 
-Once the LGE ends and the time is reached. Anyone can call the endLGE() function. This will send the contracts ETH and it's initial ERC20 supply to Uniswap  
+### Gas Snapshots
+
+```shell
+$ forge snapshot
+```
+
+### Anvil
+
+```shell
+$ anvil
+```
+
+### Deploy
+
+```shell
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+
+### Cast
+
+```shell
+$ cast <subcommand>
+```
+
+### Help
+
+```shell
+$ forge --help
+$ anvil --help
+$ cast --help
+```
